@@ -14,6 +14,11 @@ pipeline {
     }
 
     stages {
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('Git Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/mofiz-mizu/SonarQube-Project-Mizu.git'
